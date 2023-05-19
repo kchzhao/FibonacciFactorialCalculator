@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@id/homeFragment"
+        android:name="com.zybooks.kamilaproject4.HomeFragment"
+        android:label="Calculator"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_factorialFragment"
+            app:destination="@id/factorialFragment"/>
+        <action
+            android:id="@+id/action_homeFragment_to_fibonacciFragment"
+            app:destination="@id/fibonacciFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/factorialFragment"
+        android:name="com.zybooks.kamilaproject4.FactorialFragment"
+        android:label="Factorial Calculator"
+        tools:layout="@layout/fragment_factorial" >
+        <action
+            android:id="@+id/action_factorialFragment_to_fibonacciFragment"
+            app:destination="@id/fibonacciFragment" />
+        <action
+            android:id="@+id/action_factorialFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fibonacciFragment"
+        android:name="com.zybooks.kamilaproject4.FibonacciFragment"
+        android:label="Fibonacci Calculator"
+        tools:layout="@layout/fragment_fibonacci" />
+
+        <action
+            android:id="@+id/action_fibonacciFragment_to_factorialFragment"
+            app:destination="@id/factorialFragment" />
+        <action
+            android:id="@+id/action_fibonacciFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+
+</navigation>
